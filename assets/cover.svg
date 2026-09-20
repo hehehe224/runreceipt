@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">RunReceipt</title>
+  <desc id="desc">A dark verification seal binding a command to a Git commit.</desc>
+  <defs>
+    <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff2d95"/><stop offset="1" stop-color="#9d4edd"/></linearGradient>
+    <radialGradient id="wash"><stop stop-color="#ff2d95" stop-opacity=".18"/><stop offset="1" stop-color="#08070b" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="420" rx="18" fill="#08070b"/>
+  <circle cx="953" cy="190" r="250" fill="url(#wash)"/>
+  <path d="M64 72H1136M64 348H1136" stroke="#392033"/>
+  <path d="M845 105h176l70 70-158 158-158-158z" fill="none" stroke="#512445" stroke-width="2"/>
+  <path d="M826 175l67 68 146-146" fill="none" stroke="url(#rose)" stroke-width="18" stroke-linecap="square" stroke-linejoin="miter"/>
+  <circle cx="893" cy="243" r="7" fill="#fff5fb"/>
+  <text x="64" y="190" fill="#fff8fc" font-family="Arial,Helvetica,sans-serif" font-size="78" font-weight="700" letter-spacing="-3">RUNRECEIPT</text>
+  <text x="69" y="239" fill="#ff8cc5" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="18" letter-spacing="3">THE COMMAND RAN. HERE IS THE PROOF.</text>
+  <text x="69" y="310" fill="#a996a3" font-family="Arial,Helvetica,sans-serif" font-size="19">Commit-bound test receipts for humans, CI, and coding agents.</text>
+</svg>

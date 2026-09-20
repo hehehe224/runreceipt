@@ -1,0 +1,17 @@
+{
+  "name": "runreceipt",
+  "version": "0.1.0",
+  "description": "Cryptographic receipts that prove tests and builds really ran against a specific Git state.",
+  "type": "module",
+  "bin": { "runreceipt": "./bin/runreceipt.js" },
+  "exports": "./src/receipt.js",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check bin/runreceipt.js && node --check src/receipt.js",
+    "demo": "node bin/runreceipt.js run --out demo-receipt.json -- node --test"
+  },
+  "engines": { "node": ">=20" },
+  "keywords": ["ai-agents", "testing", "verification", "provenance", "git", "ci", "attestation"],
+  "license": "AGPL-3.0-only",
+  "repository": { "type": "git", "url": "git+https://github.com/hehehe224/runreceipt.git" }
+}
