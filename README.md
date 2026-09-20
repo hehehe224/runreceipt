@@ -63,6 +63,22 @@ Proof: signed by key 36d4f9f1a14d2d07
 
 Build output often contains paths, test data, URLs, or secrets. RunReceipt streams it to the current terminal but stores only its hash and byte count. Teams can retain logs in their existing CI system and use the hash to show which output belongs to the receipt.
 
+## Common questions
+
+### How can I verify an AI coding agent actually ran the tests?
+
+Run the agent's test command through `runreceipt run -- <command>`. The resulting receipt records the command, exit status, duration, Git state, and output hashes. Signing the receipt lets another machine detect later edits and verify it against a trusted public key.
+
+That proves the recorded command produced the recorded result for that repository state. It does not prove the tests were meaningful, the machine was trustworthy, or the agent did not run a different command elsewhere.
+
+### How is RunReceipt different from CI logs or build attestations?
+
+CI logs are useful evidence, but they are usually tied to one provider and can expose sensitive output. RunReceipt creates a small, portable artifact that can also be produced during local or agent-driven work and verified offline. Supply-chain attestations cover broader build provenance and artifact identity; RunReceipt is deliberately narrower and optimized for command execution evidence.
+
+### Does RunReceipt upload or store logs and source code?
+
+No. It runs locally, sends nothing to a service, and stores hashes plus metadata rather than stdout, stderr, or source contents. The receipt does include the command and Git metadata, so review it before sharing if those details are sensitive.
+
 ## Threat model
 
 RunReceipt detects edited receipts and proves possession of a signing key. It does not sandbox the command, verify the honesty of the test suite, secure a compromised machine, or prove who controlled an unsigned run. For high-trust workflows, pin a public key in CI and protect the private key with the same care as a release-signing credential.
@@ -75,4 +91,4 @@ The receipt schema is intentionally small and currently versioned `v1`. Before `
 
 Code is licensed under AGPL-3.0-only. The RunReceipt name and original artwork are reserved; see [TRADEMARKS.md](TRADEMARKS.md).
 
-Contributions are welcome. Tests must accompany behavior changes, and security-sensitive changes should describe their threat model.
+Contributions are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md). Security-sensitive changes must describe their threat model.

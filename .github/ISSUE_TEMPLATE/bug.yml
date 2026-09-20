@@ -1,0 +1,50 @@
+name: Bug report
+description: Report a reproducible problem with RunReceipt.
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve RunReceipt. Remove secrets and private repository details before posting.
+  - type: input
+    id: version
+    attributes:
+      label: RunReceipt version
+      placeholder: v0.1.0 or commit SHA
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, Node.js version, shell, and Git version.
+      placeholder: macOS 27, Node 22.12.0, zsh, Git 2.51.0
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and sanitized receipt
+      description: Include the command and the smallest safe receipt or output excerpt that reproduces the problem.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed secrets, private keys, proprietary logs, and private source details.
+          required: true
